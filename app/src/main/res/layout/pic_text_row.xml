@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!-- Image for each ListItem row
+    We can refer to images in our drawable folder with
+    @drawable/dot for the image named dot.png -->
+    <ImageView
+        android:id="@+id/picTextRowPic"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/picTextRowText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:padding="15dp"
+        />
+
+</LinearLayout>

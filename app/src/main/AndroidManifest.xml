@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.utexas.cs371m.witchel.redfetch"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
+    <permission android:name="android"></permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="edu.utexas.cs371m.witchel.redfetch.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="edu.utexas.cs371m.witchel.redfetch.OnePost"
+            android:label="@string/app_name"
+            android:parentActivityName="edu.utexas.cs371m.witchel.redfetch.MainActivity">
+
+        </activity>
+    </application>
+</manifest>

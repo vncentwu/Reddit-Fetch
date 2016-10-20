@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/actionZone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+    <EditText
+        android:id="@+id/searchTerm"
+        android:hint="type reddit search term"
+        android:textSize="20sp"
+        android:layout_weight="6"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
+        android:imeActionLabel="Fetch"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        />
+    <ProgressBar
+        android:id="@+id/netIndicator"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:visibility="invisible"
+        android:paddingTop="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/searchResults"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/actionZone"
+        />
+</RelativeLayout>
