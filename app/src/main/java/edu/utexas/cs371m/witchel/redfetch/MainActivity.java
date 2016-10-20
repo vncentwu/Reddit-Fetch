@@ -157,6 +157,8 @@ public class MainActivity extends AppCompatActivity implements URLFetch.Callback
         String term = editText.getText().toString();
         progressBar.setVisibility(ProgressBar.VISIBLE);
         String myString = "";
+        if(term.contains("&"))
+            return;
         myString = "/r/aww/search.json?q=" + term + "&sort=hot&limit=100";
         URL searchURL = null;
         try {
