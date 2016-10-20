@@ -155,10 +155,16 @@ public class MainActivity extends AppCompatActivity implements URLFetch.Callback
 
         EditText editText = (EditText) findViewById(R.id.searchTerm);
         String term = editText.getText().toString();
+        if(term.contains("&"))
+        {
+            redditRecordAdapter.listings.clear();
+            redditRecordAdapter.notifyDataSetChanged();
+            return;
+        }
+
         progressBar.setVisibility(ProgressBar.VISIBLE);
         String myString = "";
-        if(term.contains("&"))
-            return;
+
         myString = "/r/aww/search.json?q=" + term + "&sort=hot&limit=100";
         URL searchURL = null;
         try {
