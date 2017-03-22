@@ -1,31 +1,4 @@
-1. Vincent Wu
-2. vncentwu@gmail.com	
-3. 6 hours
-4. Slip days used: 0
-5. Comments: 
+A basic android application that browses Reddit.
 
-QUESTION WRITEUPS:
-
-1. setBitmap can possibly be called in URLFetch's ASyncTask in "doInBackground". 
-On the other hand, getBitmap can be called in the main UI thread. 
-
-If they are not synchronized, a get is called at the same time as a set and so the 
-get will not properly return a bitmap, when they would have if it was sychronized. 
-Since the cache won't be overwritten when using the same key, we are not concerned with
-getting the wrong info, but simply not getting the info at all.
-
-2. When we are in OnePost, it makes sense to put the full image at the front of the 
-request queue because it is the only image currently visible to the user, and it is a 
-high priority asset. The user experience won't be significantly negatively impacted
-if a few thumbnails are missing, but a greatly delayed focal point will be much more noticable. 
-
-The advantages of setting the flag to false means that it is more "fair", predictable, and easier to code.
-On the other hand, the disadvantage of this is similar to what is mentioned above, in that
-we do not discriminate between the importance of certain assets (main pictures vs thumbnails)
-
-On the other hand, the advantage of setting the flag to true allows for a better user experience
-due to faster load times on crucial elements. The disadvantage of this is somewhat greater
-unpredictability, unfairness, and increase in code complexity.
-
-3. I check to see if the term contains the character "&" as it basically allows for the term to end
-and a modification to the actual url itself and not just the search term.
+Features include in-house rate-limit and a BitMap cache that caches images, so that return
+visits do not consume network time and API calls.
